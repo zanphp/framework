@@ -10,6 +10,7 @@ use Zan\Framework\Foundation\View\View;
 use Zan\Framework\Contract\Network\Request;
 use Zan\Framework\Utilities\DesignPattern\Context;
 use Zan\Framework\Foundation\View\JsVar;
+use ZanPHP\HttpFoundation\Response\FileUploaderResponse;
 
 class HttpController extends Controller
 {
@@ -82,6 +83,11 @@ class HttpController extends Controller
         $this->jsVar->setCsrfToken($csrfToken);
         $this->viewData['_js_var'] = $this->getJsVars();
         return View::display($tpl, $this->viewData);
+    }
+
+    public function upload($filepath, array $headers = [])
+    {
+        return new FileUploaderResponse($filepath, 200, $headers);
     }
 
     public function assign($key, $value)
