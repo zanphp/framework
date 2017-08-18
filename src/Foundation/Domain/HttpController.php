@@ -85,7 +85,7 @@ class HttpController extends Controller
         return View::display($tpl, $this->viewData);
     }
 
-    public function upload($filepath, array $headers = [])
+    public function sendFile($filepath, array $headers = [])
     {
         return new FileUploaderResponse($filepath, 200, $headers);
     }
