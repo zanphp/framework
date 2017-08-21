@@ -31,15 +31,13 @@ class CheckIfBootable implements Bootable
             }
         }
 
-        if (getenv('KDT_RUN_MODE') || get_cfg_var('kdt.RUN_MODE')) {
-            $this->phpVerCheck();
-            $this->zanVerCheck();
-        }
+        $this->phpVerCheck();
+        $this->zanVerCheck();
     }
 
     private function zanVerCheck()
     {
-        $targetVersion = "3.0.4";
+        $targetVersion = "3.1.0";
         $currentVersion = swoole_version();
         if (version_compare($currentVersion, $targetVersion) < 0) {
             sys_error("\033[1;31mYour zan version($currentVersion) is lower than $targetVersion, ".
