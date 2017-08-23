@@ -1,6 +1,6 @@
 <?php
 
-namespace ZanPHP\Framework\Foundation;
+namespace Zan\Framework\Foundation;
 
 use RuntimeException;
 use ZanPHP\Contracts\Server\Factory;
