@@ -1,9 +1,9 @@
 <?php
 
-namespace Zan\Framework\Foundation\Booting;
+namespace ZanPHP\Framework\Foundation\Booting;
 
-use Zan\Framework\Contract\Foundation\Bootable;
-use Zan\Framework\Foundation\Application;
+use ZanPHP\Framework\Contract\Foundation\Bootable;
+use ZanPHP\Framework\Foundation\Application;
 
 class RegisterClassAliases implements Bootable
 {

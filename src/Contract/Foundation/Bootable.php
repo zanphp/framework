@@ -1,9 +1,8 @@
 <?php
 
-namespace Zan\Framework\Contract\Foundation;
+namespace ZanPHP\Framework\Contract\Foundation;
 
-use Zan\Framework\Foundation\Application;
-
+use ZanPHP\Framework\Foundation\Application;
 
 interface Bootable
 {
