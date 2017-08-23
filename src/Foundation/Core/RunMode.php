@@ -1,6 +1,6 @@
 <?php
 
-namespace ZanPHP\Framework\Foundation\Core;
+namespace Zan\Framework\Foundation\Core;
 
 class RunMode
 {

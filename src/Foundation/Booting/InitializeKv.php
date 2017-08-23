@@ -1,12 +1,12 @@
 <?php
 
-namespace ZanPHP\Framework\Foundation\Booting;
+namespace Zan\Framework\Foundation\Booting;
 
-use ZanPHP\Config\ConfigLoader;
-use ZanPHP\Framework\Contract\Foundation\Bootable;
-use ZanPHP\Framework\Foundation\Application;
-use ZanPHP\Framework\Foundation\Core\Path;
-use ZanPHP\NoSql\Facade\Store;
+use Zan\Framework\Contract\Foundation\Bootable;
+use Zan\Framework\Foundation\Application;
+use Zan\Framework\Foundation\Core\ConfigLoader;
+use Zan\Framework\Foundation\Core\Path;
+use Zan\Framework\Store\Facade\Store;
 
 class InitializeKv implements Bootable
 {

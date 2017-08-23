@@ -1,11 +1,11 @@
 <?php
 
-namespace ZanPHP\Framework\Foundation\Exception;
+namespace Zan\Framework\Foundation\Exception;
 
-use ZanPHP\Contracts\Foundation\ExceptionHandler;
-use ZanPHP\Contracts\Http\ResponseTrait;
-use ZanPHP\Framework\Foundation\Exception\Handler\ExceptionLogger;
-use ZanPHP\HttpFoundation\Response\BaseResponse;
+use Zan\Framework\Contract\Foundation\ExceptionHandler;
+use Zan\Framework\Foundation\Exception\Handler\ExceptionLogger;
+use Zan\Framework\Network\Http\Response\BaseResponse;
+use Zan\Framework\Network\Http\Response\ResponseTrait;
 
 class ExceptionHandlerChain
 {
