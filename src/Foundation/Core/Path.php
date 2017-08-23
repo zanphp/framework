@@ -1,10 +1,9 @@
 <?php
 
-namespace ZanPHP\Framework\Foundation\Core;
+namespace Zan\Framework\Foundation\Core;
 
-use ZanPHP\Config\Config;
-use ZanPHP\Framework\Foundation\Application;
-use ZanPHP\Support\Dir;
+use Zan\Framework\Foundation\Application;
+use Zan\Framework\Utilities\Types\Dir;
 
 class Path
 {

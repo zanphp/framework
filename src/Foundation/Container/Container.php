@@ -1,9 +1,9 @@
 <?php
 
-namespace ZanPHP\Framework\Foundation\Container;
+namespace Zan\Framework\Foundation\Container;
 
 use ReflectionClass;
-use ZanPHP\Testing\Stub;
+use Zan\Framework\Testing\Stub;
 
 class Container
 {

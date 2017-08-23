@@ -43,7 +43,7 @@
   },
   "autoload": {
     "psr-4": {
-      "ZanPHP\\Framework\\": "src/"
+      "Zan\\Framework\\": "src/"
     }
   },
   "extra": {
