@@ -1,24 +1,23 @@
 <?php
 
-namespace ZanPHP\Framework\Foundation\Booting;
+namespace Zan\Framework\Foundation\Booting;
 
-use ZanPHP\Contracts\Config\Repository;
-use ZanPHP\Framework\Contract\Foundation\Bootable;
-use ZanPHP\Framework\Foundation\Application;
+use Zan\Framework\Contract\Foundation\Bootable;
+use Zan\Framework\Foundation\Application;
+use Zan\Framework\Foundation\Core\Config;
 
 class InitializeSyslog implements Bootable
 {
     public function bootstrap(Application $app)
     {
-        $repository = make(Repository::class);
-        $uri = $repository->get('zan_syslog.uri');
+        $uri = Config::get('zan_syslog.uri');
         if (empty($uri)) {
             return;
         }
 
-        $repository->set('log.zan_framework', $uri);
-        $host = $repository->get("zan_syslog.host", "127.0.0.1");
-        $port = $repository->get("zan_syslog.port", 5140);
+        Config::set('log.zan_framework', $uri);
+        $host = Config::get("zan_syslog.host", "127.0.0.1");
+        $port = Config::get("zan_syslog.port", 5140);
 
         $logConf = [
             'engine'=> 'syslog',
@@ -33,6 +32,6 @@ class InitializeSyslog implements Bootable
                 'minimum-connection-count' => 1,
             ],
         ];
-        $repository->set('connection.syslog.zan_framework', $logConf);
+        Config::set('connection.syslog.zan_framework', $logConf);
     }
 } 

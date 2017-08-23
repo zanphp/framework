@@ -1,9 +1,9 @@
 <?php
 
-namespace ZanPHP\Framework\Foundation\Domain;
+namespace Zan\Framework\Foundation\Domain;
 
-use ZanPHP\Contracts\Network\Request;
-use ZanPHP\Coroutine\Context;
+use Zan\Framework\Contract\Network\Request;
+use Zan\Framework\Utilities\DesignPattern\Context;
 
 class Controller {
 
