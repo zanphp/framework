@@ -1,8 +1,8 @@
 <?php
 
-namespace ZanPHP\Framework\Foundation\Exception\Handler;
+namespace Zan\Framework\Foundation\Exception\Handler;
 
-use ZanPHP\Contracts\Foundation\ExceptionHandler;
+use Zan\Framework\Contract\Foundation\ExceptionHandler;
 
 class ExceptionLogger extends BaseExceptionHandler implements ExceptionHandler
 {

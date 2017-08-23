@@ -1,10 +1,8 @@
 <?php
 
-namespace ZanPHP\Framework\Contract\Network;
+namespace Zan\Framework\Contract\Network;
 
-use ZanPHP\Contracts\Network\Request;
-use ZanPHP\Contracts\Network\Response;
-use ZanPHP\Coroutine\Context;
+use Zan\Framework\Utilities\DesignPattern\Context;
 
 interface RequestPostFilter
 {
