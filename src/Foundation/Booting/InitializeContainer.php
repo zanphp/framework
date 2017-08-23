@@ -1,11 +1,10 @@
 <?php
 
-namespace Zan\Framework\Foundation\Booting;
+namespace ZanPHP\Framework\Foundation\Booting;
 
-use Zan\Framework\Contract\Foundation\Bootable;
-use Zan\Framework\Foundation\Application;
-use Zan\Framework\Foundation\Core\Config;
 use ZanPHP\Container\Container;
+use ZanPHP\Framework\Contract\Foundation\Bootable;
+use ZanPHP\Framework\Foundation\Application;
 use ZanPHP\SPI\ServiceLoader;
 
 class InitializeContainer implements Bootable

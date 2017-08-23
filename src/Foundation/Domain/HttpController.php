@@ -1,16 +1,16 @@
 <?php
 
-namespace Zan\Framework\Foundation\Domain;
+namespace ZanPHP\Framework\Foundation\Domain;
 
-use Zan\Framework\Foundation\Core\Config;
-use Zan\Framework\Network\Http\Response\RedirectResponse;
-use Zan\Framework\Network\Http\Response\Response;
-use Zan\Framework\Network\Http\Response\JsonResponse;
-use Zan\Framework\Foundation\View\View;
-use Zan\Framework\Contract\Network\Request;
-use Zan\Framework\Utilities\DesignPattern\Context;
-use Zan\Framework\Foundation\View\JsVar;
+use ZanPHP\Contracts\Config\Repository;
+use ZanPHP\Contracts\Network\Request;
+use ZanPHP\Coroutine\Context;
 use ZanPHP\HttpFoundation\Response\FileResponse;
+use ZanPHP\HttpFoundation\Response\JsonResponse;
+use ZanPHP\HttpFoundation\Response\RedirectResponse;
+use ZanPHP\HttpFoundation\Response\Response;
+use ZanPHP\HttpView\JsVar;
+use ZanPHP\HttpView\View;
 
 class HttpController extends Controller
 {
@@ -62,8 +62,9 @@ class HttpController extends Controller
 
     private function setupQiniu()
     {
-        $this->jsVar->setConfig('qn_public', Config::get('qiniu.scope.public', null));
-        $this->jsVar->setConfig('qn_private', Config::get('qiniu.scope.private', null));
+        $repository = make(Repository::class);
+        $this->jsVar->setConfig('qn_public', $repository->get('qiniu.scope.public', null));
+        $this->jsVar->setConfig('qn_private', $repository->get('qiniu.scope.private', null));
     }
 
     public function display($tpl)

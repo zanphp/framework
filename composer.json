@@ -43,8 +43,11 @@
   },
   "autoload": {
     "psr-4": {
-      "Zan\\Framework\\": "src/"
-    }
+      "ZanPHP\\Framework\\": "src/"
+    },
+    "files": [
+      "src/Foundation/Application.php"
+    ]
   },
   "extra": {
     "branch-alias": {

@@ -1,9 +1,8 @@
 <?php
 
-namespace Zan\Framework\Foundation\Core;
+namespace ZanPHP\Framework\Foundation\Core;
 
-
-use Zan\Framework\Foundation\Application;
+use ZanPHP\Framework\Foundation\Application;
 
 class Env
 {

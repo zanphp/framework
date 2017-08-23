@@ -1,8 +1,9 @@
 <?php
 
-namespace Zan\Framework\Contract\Network;
+namespace ZanPHP\Framework\Contract\Network;
 
-
+use ZanPHP\Contracts\Network\Request;
+use ZanPHP\Contracts\Network\Response;
 use ZanPHP\Coroutine\Context;
 
 interface RequestTerminator

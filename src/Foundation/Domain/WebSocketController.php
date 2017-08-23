@@ -1,9 +1,9 @@
 <?php
-namespace Zan\Framework\Foundation\Domain;
+namespace ZanPHP\Framework\Foundation\Domain;
 
-use Zan\Framework\Network\WebSocket\Request;
-use Zan\Framework\Network\WebSocket\Response;
-use Zan\Framework\Utilities\DesignPattern\Context;
+use ZanPHP\Contracts\Network\Request;
+use ZanPHP\Contracts\Network\Response;
+use ZanPHP\Coroutine\Context;
 
 class WebSocketController {
     /**
