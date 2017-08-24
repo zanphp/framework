@@ -2,7 +2,7 @@
 
 namespace ZanPHP\Framework\Contract\Foundation;
 
-use ZanPHP\Framework\Foundation\Application;
+use Zan\Framework\Foundation\Application;
 
 interface Bootable
 {

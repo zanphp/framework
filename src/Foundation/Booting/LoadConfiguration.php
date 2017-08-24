@@ -6,8 +6,8 @@ use ZanPHP\Config\AppConfig;
 use ZanPHP\Config\Config;
 use ZanPHP\Config\IronConfig;
 use ZanPHP\Config\MultiConfig;
-use ZanPHP\Framework\Contract\Foundation\Bootable;
-use ZanPHP\Framework\Foundation\Application;
+use Zan\Framework\Contract\Foundation\Bootable;
+use Zan\Framework\Foundation\Application;
 use ZanPHP\Support\Arr;
 
 class LoadConfiguration implements Bootable

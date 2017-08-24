@@ -2,8 +2,6 @@
 
 
 return [
-    \ZanPHP\Framework\Contract\Foundation\Bootable::class => \Zan\Framework\Contract\Foundation\Bootable::class,
-
     \ZanPHP\Framework\Contract\Network\RequestFilter::class => \Zan\Framework\Contract\Network\RequestFilter::class,
     \ZanPHP\Framework\Contract\Network\RequestPostFilter::class => \Zan\Framework\Contract\Network\RequestPostFilter::class,
     \ZanPHP\Framework\Contract\Network\RequestTerminator::class => \Zan\Framework\Contract\Network\RequestTerminator::class,
@@ -42,7 +40,5 @@ return [
     \ZanPHP\Framework\Foundation\Exception\Handler\ExceptionLogger::class => \Zan\Framework\Foundation\Exception\Handler\ExceptionLogger::class,
 
     \ZanPHP\Framework\Foundation\Exception\ExceptionHandlerChain::class => \Zan\Framework\Foundation\Exception\ExceptionHandlerChain::class,
-
-    \ZanPHP\Framework\Foundation\Application::class => \Zan\Framework\Foundation\Application::class,
 
 ];

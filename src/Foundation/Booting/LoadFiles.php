@@ -2,8 +2,8 @@
 
 namespace ZanPHP\Framework\Foundation\Booting;
 
-use ZanPHP\Framework\Contract\Foundation\Bootable;
-use ZanPHP\Framework\Foundation\Application;
+use Zan\Framework\Contract\Foundation\Bootable;
+use Zan\Framework\Foundation\Application;
 use ZanPHP\Framework\Foundation\Core\Loader;
 
 class LoadFiles implements Bootable

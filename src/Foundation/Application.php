@@ -72,8 +72,8 @@ class Application implements ApplicationContract
     protected $server;
 
     protected $bootstrapItems = [
-        CheckIfBootable::class,
         InitializeSPI::class,
+        CheckIfBootable::class,
         InitializeEnv::class,
         InitializeContainer::class,
         InitializeCliInput::class,

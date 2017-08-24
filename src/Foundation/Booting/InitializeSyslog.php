@@ -3,8 +3,8 @@
 namespace ZanPHP\Framework\Foundation\Booting;
 
 use ZanPHP\Contracts\Config\Repository;
-use ZanPHP\Framework\Contract\Foundation\Bootable;
-use ZanPHP\Framework\Foundation\Application;
+use Zan\Framework\Contract\Foundation\Bootable;
+use Zan\Framework\Foundation\Application;
 
 class InitializeSyslog implements Bootable
 {
