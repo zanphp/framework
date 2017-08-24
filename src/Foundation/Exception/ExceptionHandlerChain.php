@@ -27,44 +27,51 @@ class ExceptionHandlerChain
 
     public function handle(\Exception $e, array $extraHandlerChain = [])
     {
-        /** @var ExceptionHandler[] $handlerChain */
-        $handlerChain = array_merge(array_values($extraHandlerChain), $this->handlerChain);
-        if (empty($handlerChain)) {
-            echo_exception($e);
-            return;
-        }
-
-        $response = null;
-
-        //at less one handler handle the exception
-        //else throw the exception out
-        $exceptionHandled = false;
-        foreach ($handlerChain as $handler) {
-            $response = (yield $handler->handle($e));
-            if ($response) {
-                $resp = (yield getContext('response'));
-                if (!$resp) {
-                    yield setContext('response', $response);
-                }
-                $exceptionHandled = true;
-                break;
+        try {
+            /** @var ExceptionHandler[] $handlerChain */
+            $handlerChain = array_merge(array_values($extraHandlerChain), $this->handlerChain);
+            if (empty($handlerChain)) {
+                echo_exception($e);
+                return;
             }
-        }
-        
-        if ($response instanceof BaseResponse) {
-            $swooleResponse = (yield getContext('swoole_response'));
-            $response->exception = $e->getMessage();
-            /** @var $response ResponseTrait */
-            yield $response->sendBy($swooleResponse);
-            return;
-        }
 
-        if (false === $exceptionHandled) {
+            $response = null;
+
+            //at less one handler handle the exception
+            //else throw the exception out
+            $exceptionHandled = false;
+            foreach ($handlerChain as $handler) {
+                $response = (yield $handler->handle($e));
+                if ($response) {
+                    $resp = (yield getContext('response'));
+                    if (!$resp) {
+                        yield setContext('response', $response);
+                    }
+                    $exceptionHandled = true;
+                    break;
+                }
+            }
+
+            if ($response instanceof BaseResponse) {
+                $swooleResponse = (yield getContext('swoole_response'));
+                $response->exception = $e->getMessage();
+                /** @var $response ResponseTrait */
+                yield $response->sendBy($swooleResponse);
+                return;
+            }
+
+            if (false === $exceptionHandled) {
+                echo_exception($e);
+                return;
+            }
+
+            yield null;
+        } catch (\Throwable $t) {
+            echo_exception($t);
+        } catch (\Exception $e) {
             echo_exception($e);
-            return;
         }
 
-        yield null;
     }
 
     public function addHandler(ExceptionHandler $handler)
