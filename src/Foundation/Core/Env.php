@@ -2,7 +2,7 @@
 
 namespace ZanPHP\Framework\Foundation\Core;
 
-use ZanPHP\Framework\Foundation\Application;
+use Zan\Framework\Foundation\Application;
 
 class Env
 {

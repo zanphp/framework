@@ -3,7 +3,7 @@
 namespace ZanPHP\Framework\Foundation\Core;
 
 use ZanPHP\Config\Config;
-use ZanPHP\Framework\Foundation\Application;
+use Zan\Framework\Foundation\Application;
 use ZanPHP\Support\Dir;
 
 class Path
