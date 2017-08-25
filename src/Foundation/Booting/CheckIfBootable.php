@@ -1,6 +1,6 @@
 <?php
 
-namespace Zan\Framework\Foundation\Booting;
+namespace ZanPHP\Framework\Foundation\Booting;
 
 use Zan\Framework\Contract\Foundation\Bootable;
 use Zan\Framework\Foundation\Application;

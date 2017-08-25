@@ -1,12 +1,12 @@
 <?php
 
-namespace Zan\Framework\Foundation\Booting;
+namespace ZanPHP\Framework\Foundation\Booting;
 
+use ZanPHP\Config\ConfigLoader;
 use Zan\Framework\Contract\Foundation\Bootable;
 use Zan\Framework\Foundation\Application;
-use Zan\Framework\Foundation\Core\ConfigLoader;
-use Zan\Framework\Foundation\Core\Path;
-use Zan\Framework\Store\Facade\Cache;
+use ZanPHP\Framework\Foundation\Core\Path;
+use ZanPHP\NoSql\Facade\Cache;
 
 class InitializeCache implements Bootable
 {

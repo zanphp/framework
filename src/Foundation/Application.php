@@ -3,26 +3,26 @@
 namespace Zan\Framework\Foundation;
 
 use RuntimeException;
-use Zan\Framework\Foundation\Booting\CheckIfBootable;
-use Zan\Framework\Foundation\Booting\InitializeCliInput;
-use Zan\Framework\Foundation\Booting\InitializeCache;
-use Zan\Framework\Foundation\Booting\InitializeContainer;
-use Zan\Framework\Foundation\Booting\InitializeKv;
-use Zan\Framework\Foundation\Booting\InitializeSPI;
-use Zan\Framework\Foundation\Booting\InitializeSyslog;
-use Zan\Framework\Foundation\Booting\LoadFiles;
-use Zan\Framework\Foundation\Container\Container;
-use Zan\Framework\Foundation\Booting\InitializeSharedObjects;
-use Zan\Framework\Foundation\Booting\InitializePathes;
-use Zan\Framework\Foundation\Booting\InitializeRunMode;
-use Zan\Framework\Foundation\Booting\InitializeDebug;
-use Zan\Framework\Foundation\Booting\InitializeEnv;
-use Zan\Framework\Foundation\Booting\LoadConfiguration;
-use Zan\Framework\Foundation\Booting\RegisterClassAliases;
-use Zan\Framework\Utilities\Types\Arr;
-use Zan\Framework\Network\Server\Factory as ServerFactory;
+use ZanPHP\Contracts\Server\Factory;
+use ZanPHP\Framework\Foundation\Booting\CheckIfBootable;
+use ZanPHP\Framework\Foundation\Booting\InitializeCliInput;
+use ZanPHP\Framework\Foundation\Booting\InitializeCache;
+use ZanPHP\Framework\Foundation\Booting\InitializeContainer;
+use ZanPHP\Framework\Foundation\Booting\InitializeKv;
+use ZanPHP\Framework\Foundation\Booting\InitializeSPI;
+use ZanPHP\Framework\Foundation\Booting\InitializeSyslog;
+use ZanPHP\Framework\Foundation\Booting\LoadFiles;
+use ZanPHP\Framework\Foundation\Container\Container;
+use ZanPHP\Framework\Foundation\Booting\InitializeSharedObjects;
+use ZanPHP\Framework\Foundation\Booting\InitializePathes;
+use ZanPHP\Framework\Foundation\Booting\InitializeRunMode;
+use ZanPHP\Framework\Foundation\Booting\InitializeDebug;
+use ZanPHP\Framework\Foundation\Booting\InitializeEnv;
+use ZanPHP\Framework\Foundation\Booting\LoadConfiguration;
+use ZanPHP\Framework\Foundation\Booting\RegisterClassAliases;
 use ZanPHP\Container\Container as ZanPHPContainer;
 use ZanPHP\Contracts\Foundation\Application as ApplicationContract;
+use ZanPHP\Support\Arr;
 
 class Application implements ApplicationContract
 {
@@ -72,8 +72,8 @@ class Application implements ApplicationContract
     protected $server;
 
     protected $bootstrapItems = [
-        CheckIfBootable::class,
         InitializeSPI::class,
+        CheckIfBootable::class,
         InitializeEnv::class,
         InitializeContainer::class,
         InitializeCliInput::class,
@@ -209,7 +209,7 @@ class Application implements ApplicationContract
     /**
      * Set the shared instance of the container.
      *
-     * @param  \Zan\Framework\Foundation\Application $app
+     * @param  Application $app
      * @return void
      */
     public static function setInstance($app)
@@ -251,9 +251,9 @@ class Application implements ApplicationContract
      */
     public function createHttpServer()
     {
-        $server = $this->getContainer()
-            ->make(ServerFactory::class, ['server'])
-            ->createHttpServer();
+        /** @var Factory $factory */
+        $factory = make(Factory::class, ["server"]);
+        $server = $factory->createHttpServer();
 
         $this->server = $server;
 
@@ -267,9 +267,9 @@ class Application implements ApplicationContract
      */
     public function createTcpServer()
     {
-        $server = $this->getContainer()
-            ->make(ServerFactory::class, ['server'])
-            ->createTcpServer();
+        /** @var Factory $factory */
+        $factory = make(Factory::class, ["server"]);
+        $server = $factory->createTcpServer();
 
         $this->server = $server;
 
@@ -283,9 +283,9 @@ class Application implements ApplicationContract
      */
     public function createMqServer()
     {
-        $server = $this->getContainer()
-            ->make(ServerFactory::class, ['subscribeServer'])
-            ->createMqServer();
+        /** @var Factory $factory */
+        $factory = make(Factory::class, ["subscribeServer"]);
+        $server = $factory->createMqServer();
 
         $this->server = $server;
 
@@ -299,9 +299,9 @@ class Application implements ApplicationContract
      */
     public function createWebSocketServer()
     {
-        $server = $this->getContainer()
-            ->make(ServerFactory::class, ['server'])
-            ->createWebSocketServer();
+        /** @var Factory $factory */
+        $factory = make(Factory::class, ["server"]);
+        $server = $factory->createWebSocketServer();
 
         $this->server = $server;
 

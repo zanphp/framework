@@ -1,11 +1,10 @@
 <?php
 
-namespace Zan\Framework\Foundation\Core;
+namespace ZanPHP\Framework\Foundation\Core;
 
-
-use Zan\Framework\Foundation\Exception\System\InvalidArgumentException;
-use Zan\Framework\Utilities\DesignPattern\Singleton;
-use Zan\Framework\Utilities\Types\Dir;
+use InvalidArgumentException;
+use ZanPHP\Support\Dir;
+use ZanPHP\Support\Singleton;
 
 class Loader
 {

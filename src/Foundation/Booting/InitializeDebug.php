@@ -1,11 +1,11 @@
 <?php
 
-namespace Zan\Framework\Foundation\Booting;
+namespace ZanPHP\Framework\Foundation\Booting;
 
+use ZanPHP\Config\Config;
 use Zan\Framework\Contract\Foundation\Bootable;
 use Zan\Framework\Foundation\Application;
-use Zan\Framework\Foundation\Core\Config;
-use Zan\Framework\Foundation\Core\Debug;
+use ZanPHP\Framework\Foundation\Core\Debug;
 
 class InitializeDebug implements Bootable
 {

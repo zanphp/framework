@@ -1,13 +1,13 @@
 <?php
 
-namespace Zan\Framework\Foundation\Booting;
+namespace ZanPHP\Framework\Foundation\Booting;
 
-use Zan\Framework\Contract\Foundation\Bootable;
-use Zan\Framework\Foundation\Application;
-use Zan\Framework\Foundation\Core\Debug;
-use Zan\Framework\Foundation\Core\RunMode;
 use ZanPHP\Console\Bootstrap;
 use ZanPHP\EtcdRegistry\ServerRegisterInitiator;
+use Zan\Framework\Contract\Foundation\Bootable;
+use Zan\Framework\Foundation\Application;
+use ZanPHP\Framework\Foundation\Core\Debug;
+use ZanPHP\Framework\Foundation\Core\RunMode;
 
 class InitializeCliInput implements Bootable
 {

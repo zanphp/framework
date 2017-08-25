@@ -1,15 +1,14 @@
 <?php
 
-namespace Zan\Framework\Foundation\Booting;
+namespace ZanPHP\Framework\Foundation\Booting;
 
+use ZanPHP\Config\AppConfig;
+use ZanPHP\Config\Config;
+use ZanPHP\Config\IronConfig;
+use ZanPHP\Config\MultiConfig;
 use Zan\Framework\Contract\Foundation\Bootable;
 use Zan\Framework\Foundation\Application;
-use Zan\Framework\Foundation\Core\AppConfig;
-use Zan\Framework\Foundation\Core\Config;
-use Zan\Framework\Foundation\Core\Env;
-use Zan\Framework\Foundation\Core\IronConfig;
-use Zan\Framework\Foundation\Core\MultiConfig;
-use Zan\Framework\Utilities\Types\Arr;
+use ZanPHP\Support\Arr;
 
 class LoadConfiguration implements Bootable
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Zan\Framework\Foundation\Container;
+namespace ZanPHP\Framework\Foundation\Container;
 
 use RuntimeException;
-use Zan\Framework\Testing\Stub;
+use ZanPHP\Testing\Stub;
 
 class Di
 {

@@ -1,7 +1,6 @@
 <?php
 
-namespace Zan\Framework\Foundation\Core;
-
+namespace ZanPHP\Framework\Foundation\Core;
 
 use Zan\Framework\Foundation\Application;
 
