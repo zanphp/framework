@@ -2,6 +2,8 @@
 
 namespace ZanPHP\Framework\Foundation\Core;
 
+use ZanPHP\Config\Config;
+
 class Debug
 {
 
@@ -12,14 +14,20 @@ class Debug
         return self::$debug;
     }
 
+    public static function set($debug)
+    {
+        self::$debug = $debug;
+        Config::set('debug', Debug::get());
+    }
+
     public static function enableDebug()
     {
-        self::$debug = true;
+        self::set(true);
     }
 
     public static function disableDebug()
     {
-        self::$debug = false;
+        self::set(false);
     }
 
     public static function detect()
@@ -30,16 +38,16 @@ class Debug
 
         $iniInput = get_cfg_var('kdt.DEBUG');
         if($iniInput){
-            self::$debug = true;
+            self::set(true);
             return;
         }
 
         $iniInput = get_cfg_var('zanphp.DEBUG');
         if($iniInput){
-            self::$debug = true;
+            self::set(true);
             return;
         }
 
-        self::$debug = false;
+        self::set(false);
     }
 }
