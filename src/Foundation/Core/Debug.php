@@ -17,7 +17,7 @@ class Debug
     public static function set($debug)
     {
         self::$debug = $debug;
-        Config::set('debug', Debug::get());
+        Config::set('debug', $debug);
     }
 
     public static function enableDebug()
