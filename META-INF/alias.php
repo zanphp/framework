@@ -22,9 +22,6 @@ return [
     \ZanPHP\Framework\Foundation\Booting\LoadFiles::class => \Zan\Framework\Foundation\Booting\LoadFiles::class,
     \ZanPHP\Framework\Foundation\Booting\RegisterClassAliases::class => \Zan\Framework\Foundation\Booting\RegisterClassAliases::class,
 
-    \ZanPHP\Framework\Foundation\Container\Container::class => \Zan\Framework\Foundation\Container\Container::class,
-    \ZanPHP\Framework\Foundation\Container\Di::class => \Zan\Framework\Foundation\Container\Di::class,
-
     \ZanPHP\Framework\Foundation\Core\Debug::class => \Zan\Framework\Foundation\Core\Debug::class,
     \ZanPHP\Framework\Foundation\Core\Env::class => \Zan\Framework\Foundation\Core\Env::class,
     \ZanPHP\Framework\Foundation\Core\Loader::class => \Zan\Framework\Foundation\Core\Loader::class,

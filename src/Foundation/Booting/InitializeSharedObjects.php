@@ -4,7 +4,7 @@ namespace ZanPHP\Framework\Foundation\Booting;
 
 use Zan\Framework\Contract\Foundation\Bootable;
 use Zan\Framework\Foundation\Application;
-use ZanPHP\Framework\Foundation\Container\Di;
+use ZanPHP\Support\Di;
 
 class InitializeSharedObjects implements Bootable
 {

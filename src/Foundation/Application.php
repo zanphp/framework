@@ -12,7 +12,7 @@ use ZanPHP\Framework\Foundation\Booting\InitializeKv;
 use ZanPHP\Framework\Foundation\Booting\InitializeSPI;
 use ZanPHP\Framework\Foundation\Booting\InitializeSyslog;
 use ZanPHP\Framework\Foundation\Booting\LoadFiles;
-use ZanPHP\Framework\Foundation\Container\Container;
+use ZanPHP\Support\Container;
 use ZanPHP\Framework\Foundation\Booting\InitializeSharedObjects;
 use ZanPHP\Framework\Foundation\Booting\InitializePathes;
 use ZanPHP\Framework\Foundation\Booting\InitializeRunMode;
