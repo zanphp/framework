@@ -4,14 +4,18 @@ namespace Zan\Framework\Foundation\Booting;
 
 use Zan\Framework\Contract\Foundation\Bootable;
 use Zan\Framework\Foundation\Application;
-use Zan\Framework\Foundation\Core\Path;
 
 class InitializePathes implements Bootable
 {
+    private $InitializePathes;
+
+    public function __construct()
+    {
+        $this->InitializePathes = new \ZanPHP\Framework\Foundation\Booting\InitializePathes();
+    }
+
     public function bootstrap(Application $app)
     {
-        $rootPath = $app->getBasePath();
-
-        Path::init($rootPath);
+        $this->InitializePathes->bootstrap($app);
     }
 }

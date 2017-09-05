@@ -4,42 +4,23 @@ namespace Zan\Framework\Foundation\Core;
 
 class Debug
 {
-
-    private static $debug = null;
-
     public static function get()
     {
-        return self::$debug;
+       \ZanPHP\Framework\Foundation\Core\Debug::get();
     }
 
     public static function enableDebug()
     {
-        self::$debug = true;
+        \ZanPHP\Framework\Foundation\Core\Debug::enableDebug();
     }
 
     public static function disableDebug()
     {
-        self::$debug = false;
+        \ZanPHP\Framework\Foundation\Core\Debug::disableDebug();
     }
 
     public static function detect()
     {
-        if(null !== self::$debug){
-            return;
-        }
-
-        $iniInput = get_cfg_var('kdt.DEBUG');
-        if($iniInput){
-            self::$debug = true;
-            return;
-        }
-
-        $iniInput = get_cfg_var('zanphp.DEBUG');
-        if($iniInput){
-            self::$debug = true;
-            return;
-        }
-
-        self::$debug = false;
+        \ZanPHP\Framework\Foundation\Core\Debug::detect();
     }
 }

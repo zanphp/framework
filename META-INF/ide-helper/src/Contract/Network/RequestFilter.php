@@ -2,7 +2,8 @@
 
 namespace Zan\Framework\Contract\Network;
 
-use Zan\Framework\Utilities\DesignPattern\Context;
+use ZanPHP\Contracts\Network\Request;
+use ZanPHP\Coroutine\Context;
 
 interface RequestFilter
 {

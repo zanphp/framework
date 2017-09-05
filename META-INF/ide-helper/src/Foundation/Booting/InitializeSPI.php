@@ -4,25 +4,18 @@ namespace Zan\Framework\Foundation\Booting;
 
 use Zan\Framework\Contract\Foundation\Bootable;
 use Zan\Framework\Foundation\Application;
-use ZanPHP\SPI\AliasLoader;
-use ZanPHP\SPI\ServiceLoader;
 
 class InitializeSPI implements Bootable
 {
-    /**
-     * Bootstrap the given application.
-     *
-     * @param  \Zan\Framework\Foundation\Application $app
-     */
+    private $InitializeSPI;
+
+    public function __construct()
+    {
+        $this->InitializeSPI = new \ZanPHP\Framework\Foundation\Booting\InitializeSPI();
+    }
+
     public function bootstrap(Application $app)
     {
-        $app = Application::getInstance();
-        $vendor = $app->getBasePath() . "/vendor";
-
-        $aliasLoader = AliasLoader::getInstance();
-        $aliasLoader->scan($vendor);
-
-        $serviceLoader = ServiceLoader::getInstance();
-        $serviceLoader->scan($vendor);
+        $this->InitializeSPI->bootstrap($app);
     }
 }

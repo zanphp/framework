@@ -4,13 +4,18 @@ namespace Zan\Framework\Foundation\Booting;
 
 use Zan\Framework\Contract\Foundation\Bootable;
 use Zan\Framework\Foundation\Application;
-use Zan\Framework\Foundation\Core\Env;
 
 class InitializeEnv implements Bootable
 {
+    private $InitializeEnv;
+
+    public function __construct()
+    {
+        $this->InitializeEnv = new \ZanPHP\Framework\Foundation\Booting\InitializeEnv();
+    }
+
     public function bootstrap(Application $app)
     {
-        ini_set('memory_limit', '2000M');
-        Env::init();
+        $this->InitializeEnv->bootstrap($app);
     }
 } 

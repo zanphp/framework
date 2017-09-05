@@ -2,8 +2,8 @@
 
 namespace Zan\Framework\Foundation\Domain;
 
-use Zan\Framework\Network\Http\Request;
-use Zan\Framework\Network\Http\Response;
+use ZanPHP\HttpFoundation\Request\Request;
+use ZanPHP\HttpFoundation\Response\Response;
 
 abstract class Filter{
 

@@ -4,30 +4,19 @@ namespace Zan\Framework\Foundation\Booting;
 
 use Zan\Framework\Contract\Foundation\Bootable;
 use Zan\Framework\Foundation\Application;
-use Zan\Framework\Foundation\Container\Di;
 
 class InitializeSharedObjects implements Bootable
 {
-    /**
-     * @var \Zan\Framework\Foundation\Application
-     */
-    private $app;
+    private $InitializeSharedObjects;
 
-    /**
-     * Bootstrap the given application.
-     *
-     * @param  \Zan\Framework\Foundation\Application $app
-     */
-    public function bootstrap(Application $app)
+    public function __construct()
     {
-        $this->app = $app;
-
-        $this->initDiFacade();
+        $this->InitializeSharedObjects = new \ZanPHP\Framework\Foundation\Booting\InitializeSharedObjects();
     }
 
-    private function initDiFacade()
+    public function bootstrap(Application $app)
     {
-        Di::resolveFacadeInstance($this->app->getContainer());
+        $this->InitializeSharedObjects->bootstrap($app);
     }
 
 }

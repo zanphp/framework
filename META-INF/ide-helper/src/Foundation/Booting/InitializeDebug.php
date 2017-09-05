@@ -4,14 +4,18 @@ namespace Zan\Framework\Foundation\Booting;
 
 use Zan\Framework\Contract\Foundation\Bootable;
 use Zan\Framework\Foundation\Application;
-use Zan\Framework\Foundation\Core\Config;
-use Zan\Framework\Foundation\Core\Debug;
 
 class InitializeDebug implements Bootable
 {
+    private $InitializeDebug;
+
+    public function __construct()
+    {
+        $this->InitializeDebug = new \ZanPHP\Framework\Foundation\Booting\InitializeDebug();
+    }
+
     public function bootstrap(Application $app)
     {
-        Debug::detect();
-        Config::set('debug', Debug::get());
+       $this->InitializeDebug->bootstrap($app);
     }
 } 
